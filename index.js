@@ -1,7 +1,3 @@
-// const knightMoves =
-
-// x = x + 2 // y = y + 1
-// x = x - 2 // y = y - 1
 setArray = (i, j) => {
   return [
     [i + 2, j + 1],
@@ -55,7 +51,6 @@ function knightMoves(start, finish) {
     current = queue.shift();
     [currX, currY] = current.index;
 
-    // console.log(current);
 
     current.vertices.forEach((vertice) => {
       // add all curr neighbors
@@ -71,7 +66,6 @@ function knightMoves(start, finish) {
     });
 
     if (JSON.stringify(current.index) == JSON.stringify(finish)) {
-      // console.log(current);
       break;
     }
   }
@@ -84,8 +78,7 @@ function knightMoves(start, finish) {
     !(atX == startX && atY == startY);
     i++, atX = tempX, atY = tempY
   ) {
-    // console.log("at", atX, atY);
-    // console.log("prev-at",prev[atX][atY][0], prev[atX][atY][1])
+
     path.push([atX, atY]);
 
     [tempX, tempY] = prev[atX][atY];
